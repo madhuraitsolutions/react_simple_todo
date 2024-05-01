@@ -9,8 +9,8 @@ export const TodoWrapper = () => {
     setTodos([
       ...todos, // spread operator
       {
-        id : uuidv4(), // generate a unique id
-        task : todo, // task is the value passed from TodoForm
+        id: uuidv4(), // generate a unique id
+        task: todo, // task is the value passed from TodoForm
         completed: false, // initial value is false
         isEditing: false // initial value is false
       }
@@ -19,8 +19,12 @@ export const TodoWrapper = () => {
   }
   return (
     <div className='TodoWrapper'>
-        <TodoForm addTodo={addTask}/> 
-        <Todo />
+      <TodoForm addTodo={addTask} />
+      {/* <Todo /> */}
+      {/* This code is using the map function to iterate over an array called todos. For each element in the todos array, it creates a <Todo> component passing down the current todo object as a prop and a unique key attribute generated from the index.So, for each todo in the todos array, it generates a <Todo> component with the corresponding todo object passed as a prop. The key attribute is used by React to efficiently manage and update the list of components, ensuring proper rendering and performance. */}
+      {todos.map((todo, index) => (
+        <Todo todo={todo} key={index} />
+      ))}
     </div>
   )
 }
