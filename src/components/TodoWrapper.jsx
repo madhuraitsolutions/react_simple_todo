@@ -4,7 +4,7 @@ import { TodoForm } from './TodoForm'
 export const TodoWrapper = () => {
   return (
     <div className='TodoWrapper'>
-        <TodoForm />
+        <TodoForm addTodo={addTask}/> 
     </div>
   )
 }
