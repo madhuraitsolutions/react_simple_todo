@@ -2,7 +2,7 @@ import React from 'react'
 
 export const TodoForm = () => {
   //Declare a new state variable, which we'll call "value"
-  const [value, setValue] = React.useState('Hai');
+  const [value, setValue] = React.useState('Hai'); 
 
   return (
     <form className='TodoForm'>
