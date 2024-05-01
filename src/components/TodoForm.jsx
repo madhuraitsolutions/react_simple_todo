@@ -1,13 +1,15 @@
 import React from 'react'
 
-export const TodoForm = () => {
+export const TodoForm = ({addTodo}) => {
   //Declare a new state variable, which we'll call "value"
   // const [value, setValue] = React.useState('Hai'); 
   const [value, setValue] = React.useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault(); // prevent page refresh
-    console.log(value);
+    // console.log(value);
+    addTodo(value); // call the function passed from parent
+    setValue(''); // clear the input
   }
   return (
     <form className='TodoForm' onSubmit={handleSubmit}>
